@@ -1,0 +1,56 @@
+.search-results {
+    height: auto;
+    overflow: scroll;
+}
+
+
+/*
+.vertical-text {
+    transform: rotate(-90deg);
+}
+
+.small-font {
+    font-size: 9px;
+}*/
+
+th.rotated-text {
+    white-space: nowrap;
+}
+
+th.rotated-text>div {
+    transform: translate(13px, 0px) rotate(-90deg);
+    width: 30px;
+}
+
+th.rotated-text>div {
+    padding: 5px 10px;
+}
+
+.borderless td,
+.borderless th {
+    border: none;
+}
+
+.small-size {
+    font-size: 9px;
+}
+
+.rojo {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.naranja {
+    background-color: rgba(255, 136, 0, 0.5);
+}
+
+.amarillo {
+    background-color: rgba(226, 203, 1, 0.5);
+}
+
+.verde {
+    background-color: rgba(0, 180, 111, 0.5);
+}
+
+.gris {
+    background-color: rgba(73, 73, 73, 0.5);
+}

@@ -1,0 +1,131 @@
+<div class="row">
+    <div class="col">
+        <form [formGroup]="usuariosForm">
+            <div class="card p-3">
+                <div class="card-header">
+                    <h2>{{title}} USUARIO</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="nombre">NOMBRE</label>
+                            <input type="text" formControlName='NOMBRE' class="form-control " id="nombre">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['NOMBRE'].pristine && usuariosForm.controls['NOMBRE'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidopaterno">APELLIDO PATERNO</label>
+                            <input type="text" formControlName='APELLIDOPATERNO' class="form-control " id="apellidopaterno">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['APELLIDOPATERNO'].pristine && usuariosForm.controls['APELLIDOPATERNO'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidomaterno">APELLIDO MATERNO</label>
+                            <input type="text" formControlName='APELLIDOMATERNO' class="form-control " id="apellidomaterno">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['APELLIDOMATERNO'].pristine && usuariosForm.controls['APELLIDOMATERNO'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechanacimiento">FECHA NACIMIENTO</label>
+                            <div class="input-group">
+                                <input type="date" formControlName='FECHANACIMIENTO' class=" form-control " id="fechanacimiento" data-date-format="mm/dd/yyyy ">
+                            </div>
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['FECHANACIMIENTO'].pristine && usuariosForm.controls['FECHANACIMIENTO'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">EMAIL</label>
+                            <input type="text" formControlName='EMAIL' class="form-control " id="email">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['EMAIL'].pristine && usuariosForm.controls['EMAIL'].hasError('required')">*Campo obligartorio</span>
+                            <span class="small-text red" *ngIf="usuariosForm.controls['EMAIL'].hasError('email')">*Formato inválido</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="puesto">PUESTO</label>
+                            <input type="text" formControlName='PUESTO' class="form-control " id="puesto">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['PUESTO'].pristine && usuariosForm.controls['PUESTO'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">DIRECCION</label>
+                            <input type="text" formControlName='DIRECCION' class="form-control " id="direccion">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['DIRECCION'].pristine && usuariosForm.controls['DIRECCION'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="numext">NUM. EXT</label>
+                            <input type="text" formControlName='NUMEXT' class="form-control " id="numext">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['NUMEXT'].pristine && usuariosForm.controls['NUMEXT'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="numint">NUM. INT</label>
+                            <input type="text" formControlName='NUMINT' class="form-control " id="numint">
+                        </div>
+                        <div class="form-group">
+                            <label for="colonia">COLONIA</label>
+                            <input type="text" formControlName='COLONIA' class="form-control " id="colonia">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['COLONIA'].pristine && usuariosForm.controls['COLONIA'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cp">C.P.</label>
+                            <input type="text" formControlName='CP' class="form-control " id="cp">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['CP'].pristine && usuariosForm.controls['CP'].hasError('required')">*Campo obligartorio</span>
+                            <span class="small-text red" *ngIf="usuariosForm.controls['CP'].hasError('min')">*Debe contener 5 dígitos</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="municipio">MUNICIPIO</label>
+                            <input type="text" formControlName='MUNICIPIO' class="form-control " id="municipio">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['MUNICIPIO'].pristine && usuariosForm.controls['MUNICIPIO'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">ESTADO</label>
+                            <input type="text" formControlName='ESTADO' class="form-control " id="estado">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['ESTADO'].pristine && usuariosForm.controls['ESTADO'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="pais">PAIS</label>
+                            <input type="text" formControlName='PAIS' class="form-control " id="pais">
+                            <span class="small-text red" *ngIf="!usuariosForm.controls['PAIS'].pristine && usuariosForm.controls['PAIS'].hasError('required')">*Campo obligartorio</span>
+                        </div>
+                    </div>
+                    <div class="input-group" *ngIf="!overview">
+                        <h3 class="pr-4">HABILIDADES</h3>
+                        <button type="button" class="btn btn-success" (click)="new()">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                              </svg>
+                        </button>
+                    </div>
+                    <div class="row" *ngIf="!overview">
+                        <div formArrayName="HABILIDADES">
+                            <div *ngFor="let hab of HABILIDADES.controls; let i = index" [formGroupName]="i">
+                                <div class="input-group p-2">
+                                    <input type="text" formControlName="NOMBRE" class="form-control">
+                                    <span class="small-text red" *ngIf="hab.controls['NOMBRE'].hasError('required')">*Campo obligartorio</span>
+                                    <button type="button" class="btn btn-danger" (click)="deleteHabilidad(i)">
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                                          </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="overview">
+                        <h3 class="pr-4">HABILIDADES</h3>
+                    </div>
+                    <div class="row" *ngIf="overview">
+                        <div formArrayName="HABILIDADES">
+                            <div *ngFor="let hab of HABILIDADES.controls; let i = index" [formGroupName]="i">
+                                <h5>{{hab.controls['NOMBRE'].value}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-actions p-3">
+                    <div class="row">
+                        <div class="col text-left ">
+                            <button class="btn btn-secondary" type="submit" [routerLink]="['/usuarios']">ATRÁS</button>
+                        </div>
+                        <div class="col text-right" *ngIf="!overview">
+                            <button class="btn btn-primary" [disabled]="usuariosForm.invalid" type="submit" (click)="onSubmit()">GUARDAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
